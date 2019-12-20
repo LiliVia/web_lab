@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+    <h1>Do you like coffee?</h1>
+    <nav class="menu">
+        <ul>
+            <li><a href="../../index.html">Main with only HTML</a></li>
+            <li><a href="../page_css/index.html">Go to the page with only CSS</a></li>
+            <li><a class="active" href="../page_js/index.html">We use JS</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="fixed-center">
+    <article class="clickable" onclick="toggleImage();">
+        <figure>
+            <img id="toggleImage" src="https://images.unsplash.com/photo-1524350876685-274059332603?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                    alt="coffee picture" width="auto" height="500">
+            <figcaption>Photoes theme</figcaption>
+        </figure>
+        <p>Click to change it to another</p>
+    </article>
+</main>
+<footer class="fixed-bottom">
+    <p>Kiev, 2019</p>
+</footer>
+<script>
+function toggleImage() {
+   var myArray = [
+    "https://images.unsplash.com/photo-1492158244976-29b84ba93025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1503240778100-fd245e17a273?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1504888527749-e68244b4d3d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+    "https://images.unsplash.com/photo-1504887383785-1e5af315d285?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1524350876685-274059332603?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1459755486867-b55449bb39ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    ];
+
+    function getRandomEl(array) {
+        return array[Math.floor(Math.random()*myArray.length)];
+    }
+    var randomSrc = getRandomEl(myArray);
+   
+    var imgElement = document.getElementById('toggleImage');
+
+    imgElement.src = (imgElement.src === randomSrc) ? getRandomEl(myArray) : randomSrc;
+}
+</script>
+</body>
+</html>
