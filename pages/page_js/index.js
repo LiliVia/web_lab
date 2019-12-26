@@ -24,11 +24,10 @@ function getCurrentWeather(url) {
         weather.description = details.weather.description;
         weather.temp = details.temp.toFixed(0);
       });
-      // console.log(weather);
       const forecast = 
             `<h3>You are in ${weather.city}</h3>
              <div>Today is ${weather.day} ${weather.date}</div>
-             ${weather.temp != weather.tempFeel ? '<div>${weather.temp}&deg;C</div>' : ''}
+             ${weather.temp != weather.tempFeel ? `<div>${weather.temp}&deg;C</div>` : ''}
              <div><img src=${weather.icon}></div>
              <div>Feels like ${weather.tempFeel}&deg;C</div>
              <h2 class='forecast'>It's time to have a cup of coffee!</h2>
