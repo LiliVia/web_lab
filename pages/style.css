@@ -20,6 +20,11 @@ footer {
   justify-content: space-around;
   align-items: center;
 }
+
+main.fixed-center {
+  justify-content: space-evenly;
+}
+
 header,
 footer {
   background-color: #4b3320;
@@ -41,6 +46,7 @@ li a {
   color: white;
   text-align: center;
   padding: 14px 16px;
+  border-radius: 2px;
   text-decoration: none;
 }
 
@@ -64,10 +70,53 @@ p {
   cursor: pointer;
 }
 
+article {
+  position: relative;
+}
+article > p {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  top: 42%;
+  text-shadow: 0 0 12px #342423;
+  opacity: 0;
+}
+article:hover > p {
+  opacity: 1;
+}
+
 figure {
   float: right;
   border: thin silver solid;
   margin: 0.5em;
   padding: 0.5em;
   font-style: italic;
+}
+
+figure > img {
+  max-width: 536px;
+  height: auto;
+}
+
+.rendered {
+  margin-right: 1em;
+  height: 357px;
+}
+
+button#advice {
+  outline: none;
+  padding: 15px;
+  background: #4b3320;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid #4b3320;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+h2.forecast {
+  color: #9b5821;
 }
