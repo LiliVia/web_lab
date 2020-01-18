@@ -1,4 +1,4 @@
-const button = document.getElementById('advice');
+const adviceButton = document.getElementById('advice');
 let city = 'kiev';
 
 const API_URL = 'https://api.weatherbit.io/v2.0/';
@@ -28,11 +28,13 @@ function getCurrentWeather(url) {
             `<h3>You are in ${weather.city}</h3>
              <div>Today is ${weather.day} ${weather.date}</div>
              ${weather.temp != weather.tempFeel ? `<div>${weather.temp}&deg;C</div>` : ''}
-             <div><img src=${weather.icon}></div>
+             <div class='weatherIcon'><img src=${weather.icon}></div>
              <div>Feels like ${weather.tempFeel}&deg;C</div>
              <h2 class='forecast'>It's time to have a cup of coffee!</h2>
             `;
       div.innerHTML = forecast;
+      if (adviceButton.textContent === 'Get coffeine forecast :)')
+        adviceButton.textContent = 'Get next coffeine forecast :)';
     }).then(
   () => console.log('Get weather'),
   () => console.error('Failed'),
@@ -48,7 +50,7 @@ const getWeekday = datetime => {
   return weekday[date];
 };
 
-button.addEventListener('click', ev => {
+adviceButton.addEventListener('click', ev => {
   ev.preventDefault();
   getCurrentWeather(BASE_URL);
 })
