@@ -95,7 +95,7 @@ figure {
 }
 
 figure > img {
-  max-width: 536px;
+  max-width: 500px;
   height: auto;
 }
 
@@ -119,4 +119,12 @@ button#advice {
 
 h2.forecast {
   color: #9b5821;
+}
+
+.weatherIcon {
+  text-align: center;
+  background: #9E9E9E;
+  margin: 16px 2px;
+  border-radius: 10px;
+  width: 88%;
 }
