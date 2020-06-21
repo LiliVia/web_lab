@@ -30,14 +30,14 @@ function getCurrentWeather(url) {
              ${weather.temp != weather.tempFeel ? `<div>${weather.temp}&deg;C</div>` : ''}
              <div class='weatherIcon'><img src=${weather.icon}></div>
              <div>Feels like ${weather.tempFeel}&deg;C</div>
-             <h2 class='forecast'>It's time to have a cup of coffee!</h2>
+             <h2 class='forecast'>It's time to have a cup of ${weather.temp && weather.temp > 25 ? `ice latte` : `coffee`}!</h2>
             `;
       div.innerHTML = forecast;
       if (adviceButton.textContent === 'Get coffeine forecast :)')
         adviceButton.textContent = 'Get next coffeine forecast :)';
     }).then(
-  () => console.log('Get weather'),
-  () => console.error('Failed'),
+  () => console.log('All ok - we get weather'),
+  () => console.error('Failed response'),
 );
 }
 
