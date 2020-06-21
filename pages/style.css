@@ -137,6 +137,9 @@ button#advice {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-shadow: 1px 1px 0px #fff;
+  font-weight: 600;
+  color: chocolate;
 }
 
 h2.forecast {
